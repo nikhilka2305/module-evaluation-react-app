@@ -1,16 +1,20 @@
 import React, { useState } from "react";
 import "./AddContact.css";
-export default function AddContact({ addContact }) {
+import { useDispatch } from "react-redux";
+import { v4 as uuid } from "uuid";
+import { addContact } from "../features/contactManagement/contactManageSlice";
+export default function AddContact() {
+	const dispatch = useDispatch();
+
 	const [name, setName] = useState("");
 	const [email, setEmail] = useState("");
 	const [errors, setErrors] = useState("");
 	const addContactHandler = (evt) => {
 		evt.preventDefault();
 		if (name === "" || email === "") {
-			console.log("Enter a valid name and email");
 			setErrors("Enter a valid name and email");
 		} else {
-			addContact(name, email);
+			dispatch(addContact({ id: uuid(), name: name, email: email }));
 			setName("");
 			setEmail("");
 			setErrors("");
@@ -63,7 +67,7 @@ export default function AddContact({ addContact }) {
 			/>
 			<button
 				type="submit"
-				className="mx-auto mt-6 w-32 rounded-md bg-green-300 px-3 py-2 text-md tracking-wider font-light text-green-950 shadow-sm hover:bg-green-800 hover:text-green-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600"
+				className="mx-auto mt-6 w-32 rounded-md bg-green-300 px-3 py-2 text-md tracking-wider font-light text-green-950 shadow-lg hover:bg-green-800 hover:text-green-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600"
 			>
 				Add Contact
 			</button>
