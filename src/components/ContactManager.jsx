@@ -32,7 +32,9 @@ export default function ContactManager() {
 
 	return (
 		<main className="contactManager">
-			<h2 className="text-center text-2xl tracking-widest">Add Contact</h2>
+			<h2 className="text-center text-3xl tracking-widest font-bold">
+				Add Contact
+			</h2>
 			<AddContact addContact={addContactHandler} />
 			<DisplayContacts
 				contactList={contacts}

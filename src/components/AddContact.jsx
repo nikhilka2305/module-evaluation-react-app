@@ -19,17 +19,17 @@ export default function AddContact({ addContact }) {
 	return (
 		<form
 			action=""
-			className="size-full border-2 border-primary p-8 rounded-xl mt-4 flex flex-col items-start"
+			className="size-full border-2 border-black p-8 rounded-xl mt-4 flex flex-col items-start"
 			onSubmit={addContactHandler}
 		>
 			{errors && (
-				<p className="text-center self-stretch text-red-500 bg-red-200 border border-red-600 mb-4 tracking-wider">
+				<p className="text-center self-stretch text-red-500 bg-red-200 border border-red-600 mb-4 tracking-wider rounded-lg px-2 text-base">
 					Enter valid name & Email
 				</p>
 			)}
 			<label
 				htmlFor="name"
-				className="text-md font-medium leading-6 text-gray-900 m-0 tracking-wider"
+				className="text-md font-semibold leading-6 text-gray-900 m-0 tracking-wider"
 			>
 				Name
 			</label>
@@ -46,7 +46,7 @@ export default function AddContact({ addContact }) {
 			/>
 			<label
 				htmlFor="email"
-				className="text-md font-medium leading-6 text-gray-900 m-0 tracking-wider"
+				className="text-md font-semibold leading-6 text-gray-900 m-0 tracking-wider"
 			>
 				Email
 			</label>
@@ -63,7 +63,7 @@ export default function AddContact({ addContact }) {
 			/>
 			<button
 				type="submit"
-				className="mx-auto mt-6 w-32 rounded-md bg-indigo-600 px-3 py-2 text-md tracking-wider font-light text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+				className="mx-auto mt-6 w-32 rounded-md bg-green-300 px-3 py-2 text-md tracking-wider font-light text-green-950 shadow-sm hover:bg-green-800 hover:text-green-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600"
 			>
 				Add Contact
 			</button>
